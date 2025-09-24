@@ -195,24 +195,20 @@ body.no-scroll {
     position: fixed;
     top: 0;
     left: 0;
-    /* Menu agora é posicionado na esquerda */
-    width: 80%;
-    max-width: 400px;
+    width: 100%;
     height: 100vh;
-    background-color: #fcebeb;
+    background-color: rgb(242 235 235 / 90%);
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transform: translateX(-100%);
-    /* Escondido para a esquerda */
     transition: transform 0.3s ease-in-out;
     padding: 20px;
 }
 
 .menu.active {
     transform: translateX(0);
-    /* Volta à posição original (lado esquerdo da tela) */
 }
 
 .menu ul {
@@ -225,9 +221,9 @@ body.no-scroll {
 }
 
 .menu ul li {
-    background-color: #f4dee4;
-    padding: 5px 30px;
-    border-radius: 12px;
+    background-color: #8b6d79;
+    padding: 15px 30px;
+    border-radius: 20px;
     transition: background-color 0.3s ease;
 }
 
@@ -236,9 +232,9 @@ body.no-scroll {
 }
 
 .menu ul li a {
-    color: #5d0f2e;
-    font-size: 1.2rem;
-    font-weight: 500;
+    color: #ffffffe0;
+    font-size: 1.3rem;
+    font-weight: 490;
     transition: color 0.3s ease;
 }
 
@@ -258,6 +254,23 @@ body.no-scroll {
 
 .btn-agendar:hover {
     background: #cca2ac;
+}
+
+/* Estilização do botão dentro do menu */
+.btn-menu-whatsapp {
+    background: #a25a6b;
+    color: #ffffff !important;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px solid #a25a6b2e;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 30px;
+}
+
+.btn-menu-whatsapp:hover {
+    background: #cca2ac;
+    transform: scale(1.05);
 }
 
 .hero-container {
@@ -633,21 +646,4 @@ footer {
     section h2 {
         font-size: 1.6rem;
     }
-}
-
-/* Botão do menu */
-.btn-menu-whatsapp {
-    background: #a25a6b;
-    color: #ffffff !important;
-    padding: 10px 30px;
-    border-radius: 20px;
-    font-weight: bold;
-    border: 1px solid #a25a6b2e;
-    transition: background 0.3s ease, transform 0.3s ease;
-    margin-top: 30px; /* Adiciona um espaço acima do botão */
-}
-
-.btn-menu-whatsapp:hover {
-    background: #cca2ac;
-    transform: scale(1.05);
 }
