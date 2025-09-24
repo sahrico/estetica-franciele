@@ -227,7 +227,7 @@ body.no-scroll {
     text-align: left;
     gap: 20px;
     padding: 0;
-    width: 23%;
+    width: 100%;
     background-color: #f8f3f3a6;
     border-radius: 20px;
 }
