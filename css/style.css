@@ -129,31 +129,36 @@ body.no-scroll {
     transition: all 0.3s ease;
 }
 
+/* Estilo padrão dos ícones */
 .whatsapp-social-icon {
     background-image: url('../img/whatsapp.svg');
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
+    filter: brightness(0.6) sepia(1) hue-rotate(240deg) saturate(3);
+    /* Cor padrão */
 }
 
 .instagram-social-icon {
-    /* NOVO ESTILO PARA O ÍCONE DO INSTAGRAM */
     background-image: url('../img/instagram.svg');
     background-size: 25px;
     background-position: center;
     background-repeat: no-repeat;
+    filter: brightness(0.6) sepia(1) hue-rotate(240deg) saturate(3);
+    /* Cor padrão */
 }
 
+/* Efeito de hover */
 .social-icons a:hover {
     background-color: #d7afbc;
+    /* Cor de fundo rosa claro */
     transform: scale(1.1);
 }
 
-/* Alterado para o novo ícone do Instagram */
+/* O filtro a seguir garante que o ícone fique branco no hover */
 .social-icons a:hover.whatsapp-social-icon,
 .social-icons a:hover.instagram-social-icon {
-    filter: invert(1);
-    /* Inverte a cor da imagem SVG para branco no hover */
+    filter: brightness(0) invert(1);
 }
 
 .logo-area {
@@ -372,13 +377,24 @@ section h2 {
 .about-image-container {
     flex: 1;
     max-width: 500px;
+    height: 500px;
+    /* Adicionado um height fixo, similar ao hero */
 }
 
 .about-image-right {
     width: 100%;
-    height: auto;
-    border-radius: 12px;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    /* Garante que preencha o container */
+    object-fit: cover;
+    /* Recorta a imagem para preencher o container sem distorcer */
+    border-radius: 0;
+    /* Remova o border-radius */
+    box-shadow: none;
+    /* Remova o box-shadow */
+
+    /* Adiciona o efeito orgânico (mask) */
+    -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
+    mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
 }
 
 .address-content {
@@ -523,6 +539,13 @@ footer {
 
     .about-image-right {
         max-width: 100%;
+        height: auto;
+        /* Volta para auto para não cortar em telas menores, ou ajuste a lógica do height conforme preferir */
+    }
+
+    .about-image-container {
+        height: auto;
+        /* Ajusta o container para se adaptar à imagem */
     }
 
     .procedures-grid {
