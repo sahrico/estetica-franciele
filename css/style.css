@@ -4,6 +4,15 @@ body {
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    overflow-x: hidden;
     /* Aplicado a HTML e BODY para garantir que nada extrapole */
 }
 
