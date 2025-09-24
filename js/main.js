@@ -28,24 +28,39 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Funcionalidade para o Menu Hambúrguer
+    // Funcionalidade para o Menu Hambúrguer (Corrigida)
     const hamburgerBtn = document.getElementById('hamburger-btn');
     const mainMenu = document.getElementById('main-menu');
-    const body = document.body; // Seleciona o corpo da página
+    const body = document.body;
+    let scrollPosition = 0; // Variável para armazenar a posição do scroll
 
     hamburgerBtn.addEventListener('click', () => {
+        const isMenuOpening = !mainMenu.classList.contains('active');
+
+        if (isMenuOpening) {
+            scrollPosition = window.pageYOffset; // Salva a posição atual do scroll
+            body.style.top = `-${scrollPosition}px`; // Move a página para cima
+            body.classList.add('no-scroll');
+        } else {
+            body.classList.remove('no-scroll');
+            body.style.top = ''; // Remove a posição fixa
+            window.scrollTo(0, scrollPosition); // Volta a página para a posição salva
+        }
+        
         mainMenu.classList.toggle('active');
         hamburgerBtn.classList.toggle('active');
-        body.classList.toggle('no-scroll'); // Adiciona/remove a classe que desabilita a rolagem
     });
 
     // Fecha o menu ao clicar em um link
     const menuLinks = mainMenu.querySelectorAll('a');
     menuLinks.forEach(link => {
         link.addEventListener('click', () => {
+            body.classList.remove('no-scroll');
+            body.style.top = '';
+            window.scrollTo(0, scrollPosition);
+            
             mainMenu.classList.remove('active');
             hamburgerBtn.classList.remove('active');
-            body.classList.remove('no-scroll'); // Garante que a rolagem seja reativada
         });
     });
 });
