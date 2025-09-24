@@ -1,15 +1,9 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
-    /* Adicione esta linha */
+    /* Garante que a rolagem horizontal seja desativada */
 }
 
 a {
@@ -17,7 +11,7 @@ a {
     color: inherit;
 }
 
-/* Impede a rolagem do corpo da página */
+/* Impede a rolagem do corpo da página quando o menu estiver aberto */
 body.no-scroll {
     overflow: hidden;
 }
