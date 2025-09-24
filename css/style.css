@@ -15,6 +15,11 @@ a {
     color: inherit;
 }
 
+/* Impede a rolagem do corpo da página */
+body.no-scroll {
+    overflow: hidden;
+}
+
 /* Animação para surgimento de seções */
 .hidden {
     opacity: 0;
@@ -272,52 +277,6 @@ a {
     mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
 }
 
-@media (max-width: 992px) {
-    .hero-content-box {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .hero-text {
-        text-align: center;
-        max-width: 90%;
-    }
-
-    .hero-image-container {
-        width: 250px;
-        height: 250px;
-    }
-
-    .about-new-layout {
-        flex-direction: column;
-    }
-
-    .about-text-content {
-        text-align: center;
-    }
-
-    .about-image-right {
-        max-width: 100%;
-    }
-
-    .hero-content-box {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .hero-text {
-        text-align: center;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-
-    .hero-image-container {
-        width: 250px;
-        height: 250px;
-    }
-}
 
 section {
     max-width: 1200px;
@@ -541,6 +500,59 @@ footer {
 /*
       Ajustes responsivos para os elementos que não queremos que mudem em telas menores.
     */
+
+/* Media query para telas médias (geralmente tablets) */
+@media (max-width: 992px) {
+
+    .section-pink,
+    .section-white {
+        padding: 60px 20px;
+    }
+
+    section h2,
+    .services-main-title {
+        font-size: 1.8rem;
+    }
+
+    .hero-content-box {
+        flex-direction: column;
+        text-align: center;
+        gap: 30px;
+        padding: 20px;
+    }
+
+    .hero-text {
+        text-align: center;
+        max-width: 90%;
+    }
+
+    .hero-image-container {
+        width: 250px;
+        height: 250px;
+    }
+
+    .about-new-layout {
+        flex-direction: column;
+    }
+
+    .about-text-content {
+        text-align: center;
+    }
+
+    .about-image-right {
+        max-width: 100%;
+    }
+
+    .procedures-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .faq-subtitle {
+        margin-bottom: 25px;
+    }
+}
+
+/* Media query para telas pequenas (smartphones) */
 @media (max-width: 768px) {
     .container {
         flex-direction: column;
@@ -560,128 +572,31 @@ footer {
     }
 
     .about-new-layout {
-        flex-direction: column;
         text-align: center;
-    }
-
-    .about-text-content {
-        text-align: center;
-    }
-
-    .about-image-right {
-        max-width: 100%;
     }
 
     .hero-content-box {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .hero-text {
-        text-align: center;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-
-    .hero-image-container {
-        width: 250px;
-        height: 250px;
+        gap: 20px;
     }
 }
 
-footer {
-    background: #90767f;
-    text-align: center;
-    padding: 30px 20px;
-    font-size: 0.9rem;
-    color: #fff;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 10px;
-}
+/* Media query para telas extra-pequenas */
+@media (max-width: 480px) {
 
-.social-icon img {
-    height: 30px;
-    width: 30px;
-    filter: invert(1);
-}
-
-/* Botão do WhatsApp alterado para as novas propriedades */
-.botaowpp {
-    background-image: url('../img/whatsapp.svg');
-    background-size: 25px;
-    background-position: center;
-    background-repeat: no-repeat;
-    height: 55px;
-    width: 55px;
-    position: fixed;
-    bottom: 30px;
-    right: 3%;
-    z-index: 999;
-    border: none;
-    outline: none;
-    cursor: pointer;
-    margin: 10px;
-    font-size: 18px;
-    background-color: #d7b6b8;
-    border-radius: 50px;
-}
-
-/*
-      Ajustes responsivos para os elementos que não queremos que mudem em telas menores.
-    */
-@media (max-width: 768px) {
-    .container {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .logo-img {
-        height: 60px;
+    .section-pink,
+    .section-white {
+        padding: 40px 15px;
     }
 
     .hero-text h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .hero-text p {
-        font-size: 1rem;
+        font-size: 0.9rem;
     }
 
-    .about-new-layout {
-        flex-direction: column;
-        text-align: center;
+    section h2 {
+        font-size: 1.6rem;
     }
-
-    .about-text-content {
-        text-align: center;
-    }
-
-    .about-image-right {
-        max-width: 100%;
-    }
-
-    .hero-content-box {
-        flex-direction: column;
-        text-align: center;
-        gap: 30px;
-    }
-
-    .hero-text {
-        text-align: center;
-        max-width: 90%;
-        margin: 0 auto;
-    }
-
-    .hero-image-container {
-        width: 250px;
-        height: 250px;
-    }
-}
-
-/* Impede a rolagem do corpo da página */
-body.no-scroll {
-    overflow: hidden;
 }
