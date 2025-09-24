@@ -68,6 +68,27 @@ body.no-scroll {
     z-index: 1000;
 }
 
+.topo.scrolled {
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    animation: slideDown 0.5s ease-out;
+}
+
+.topo.scrolled .logo-img {
+    height: 60px;
+}
+
+@keyframes slideDown {
+    from {
+        transform: translateY(-100%);
+    }
+
+    to {
+        transform: translateY(0);
+    }
+}
+
 .container {
     display: flex;
     justify-content: space-between;
@@ -173,20 +194,25 @@ body.no-scroll {
 .menu {
     position: fixed;
     top: 0;
-    right: 0;
-    width: 100%;
+    left: 0;
+    /* Menu agora é posicionado na esquerda */
+    width: 80%;
+    max-width: 400px;
     height: 100vh;
-    background-color: rgba(250, 232, 238, 0.9);
+    background-color: #fcebeb;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    transform: translateX(100%);
+    transform: translateX(-100%);
+    /* Escondido para a esquerda */
     transition: transform 0.3s ease-in-out;
+    padding: 20px;
 }
 
 .menu.active {
     transform: translateX(0);
+    /* Volta à posição original (lado esquerdo da tela) */
 }
 
 .menu ul {
@@ -194,18 +220,31 @@ body.no-scroll {
     display: flex;
     flex-direction: column;
     text-align: center;
-    gap: 30px;
+    gap: 20px;
+    padding: 0;
+}
+
+.menu ul li {
+    background-color: #f4dee4;
+    padding: 5px 30px;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+}
+
+.menu ul li:hover {
+    background-color: #d7afbc;
 }
 
 .menu ul li a {
     color: #5d0f2e;
-    font-size: 1.5rem;
+    font-size: 1.2rem;
+    font-weight: 500;
+    transition: color 0.3s ease;
 }
 
-.menu ul li a:hover {
-    color: #d7afbc;
+.menu ul li:hover a {
+    color: #fff;
 }
-
 
 .btn-agendar {
     background: #a25a6b;
@@ -378,21 +417,15 @@ section h2 {
     flex: 1;
     max-width: 500px;
     height: 500px;
-    /* Adicionado um height fixo, similar ao hero */
 }
 
 .about-image-right {
     width: 100%;
     height: 100%;
-    /* Garante que preencha o container */
     object-fit: cover;
-    /* Recorta a imagem para preencher o container sem distorcer */
     border-radius: 0;
-    /* Remova o border-radius */
     box-shadow: none;
-    /* Remova o box-shadow */
 
-    /* Adiciona o efeito orgânico (mask) */
     -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
     mask-image: radial-gradient(circle at center, black 40%, transparent 70%);
 }
@@ -540,12 +573,10 @@ footer {
     .about-image-right {
         max-width: 100%;
         height: auto;
-        /* Volta para auto para não cortar em telas menores, ou ajuste a lógica do height conforme preferir */
     }
 
     .about-image-container {
         height: auto;
-        /* Ajusta o container para se adaptar à imagem */
     }
 
     .procedures-grid {
@@ -602,4 +633,21 @@ footer {
     section h2 {
         font-size: 1.6rem;
     }
+}
+
+/* Botão do menu */
+.btn-menu-whatsapp {
+    background: #a25a6b;
+    color: #ffffff !important;
+    padding: 10px 30px;
+    border-radius: 20px;
+    font-weight: bold;
+    border: 1px solid #a25a6b2e;
+    transition: background 0.3s ease, transform 0.3s ease;
+    margin-top: 30px; /* Adiciona um espaço acima do botão */
+}
+
+.btn-menu-whatsapp:hover {
+    background: #cca2ac;
+    transform: scale(1.05);
 }
