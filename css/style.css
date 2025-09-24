@@ -1,9 +1,10 @@
+html,
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #333;
     line-height: 1.6;
     overflow-x: hidden;
-    /* Garante que a rolagem horizontal seja desativada */
+    /* Aplicado a HTML e BODY para garantir que nada extrapole */
 }
 
 a {
